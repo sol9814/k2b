@@ -3,9 +3,37 @@
     <title>Report Viewer</title>
     <script src="jquery-1.11.0.min.js"></script>
     <!--<script src="./crownix-viewer.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
    <link rel="stylesheet" type="text/css" href="crownix-viewer.min.css">
    <link rel="stylesheet" type="text/css" href="main_css.css">
     
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var currentPageUrl = window.location.href;
+
+        QRCode.toDataURL(currentPageUrl, function (error, url) {
+            if (error) {
+                console.error(error);
+            } else {
+                var qrImage1 = document.getElementById('qrImage1');
+                if (qrImage1) {
+                    qrImage1.src = url;  // 첫 번째 QR 코드
+                } else {
+                    console.error('QR 코드 1 이미지를 찾을 수 없습니다.');
+                }
+
+                var qrImage2 = document.getElementById('qrImage2');
+                if (qrImage2) {
+                    qrImage2.src = url;  // 두 번째 QR 코드
+                } else {
+                    console.error('QR 코드 2 이미지를 찾을 수 없습니다.');
+                }
+            }
+        });
+    });
+</script>
+
+</script>
 
 <style>
 .container {
@@ -130,14 +158,16 @@
         }
 
 .container7 {
-            padding-top: 850px;
+            padding-top: 870px;
         }
         .dashed-line {
-            border: none;
-            border-top: 2px dashed black;
+            border-top: 1px dashed black;
             width: 80%;
-            margin: 20px auto;
+            margin: 3px auto;
+            padding: 0;
+            height: 0;
         }
+
         .content-wrapper {
             display: flex;
             align-items: stretch; 
@@ -146,27 +176,22 @@
             margin: 0 auto;
             padding: 0; 
         }
-        .image {
+        .container7 .image {
             width: 150px;
             height: auto;
             margin: 0;
             padding: 0; 
             display: block;
-        }
-        .vertical-line {
-            width: 0.5px; 
-            background-color: black;
-            height: 100%; 
-            margin: 0; 
-            padding: 0;
+            margin-right: 10px;
+            border-right: 1px solid #000000;
         }
         .text {
+            padding-top: 10px;
             font-size: 12pt;
             color: rgb(0, 0, 0);
             line-height: 19px;
-            padding-left: 10px; 
+            padding-left: 30px; 
         }
-
 </style>
 
 <style class="crownix-theme" type="text/css">
@@ -180,8 +205,7 @@
     <div class="container7">
         <hr class="dashed-line"> 
         <div class="content-wrapper">
-            <img src="qr.jpg" alt="QR 코드" class="image">
-            <div class="vertical-line"></div>
+            <img id="qrImage1" alt="QR 코드" class="image">
             <div class="text">
                 <p>※ QR코드로 건설업기초교육 이수내역 조회가 가능하며,</p>
                 <p>&nbsp;&nbsp;조회시 결과페이지 서버주소 http://k2b.kosha.or.kr를</p>
@@ -203,7 +227,7 @@
 </div>
 <div class="container4">
     <div class="image-container">
-        <img src="qr.jpg" class="image" />
+        <img id="qrImage2" class="image" />
     </div>
 </div>
 <div class="container5">
