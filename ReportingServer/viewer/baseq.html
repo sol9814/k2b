@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <title>Report Viewer</title>
     <script src="jquery-1.11.0.min.js"></script>
-    <script src="crownix-viewer.min.js"></script>
+    <!--<script src="crownix-viewer.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
    <link rel="stylesheet" type="text/css" href="crownix-viewer.min.css">
    <link rel="stylesheet" type="text/css" href="main_css.css">
@@ -36,15 +36,20 @@
 </script>
 
 <style>
-    html, body {
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: auto;
-    touch-action: auto; /* 터치 가능하게 설정 */
+html, body {
+    touch-action: auto !important; 
+    pointer-events: auto !important; 
+    overflow-x: hidden !important; 
+    max-width: 100% !important;
+}
+* {
+    touch-action: auto !important; 
+    pointer-events: auto !important;
 }
 
 .container {
-        position: absolute;
+            pointer-events: auto;
+            position: absolute;
             left: 130px;
             top: 200px;
             width: 60%;
