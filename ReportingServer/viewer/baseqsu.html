@@ -1,0 +1,337 @@
+<html style="margin:0px;height:100%;"><head>
+    <meta charset="utf-8">
+    <title>Report Viewer</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <!--<script src="crownix-viewer.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="crownix-viewer.min.css">
+   <link rel="stylesheet" type="text/css" href="main_css.css">
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var currentPageUrl = window.location.href;
+
+        QRCode.toDataURL(currentPageUrl, function (error, url) {
+            if (error) {
+                console.error(error);
+            } else {
+                var qrImage1 = document.getElementById('qrImage1');
+                if (qrImage1) {
+                    qrImage1.src = url;  // 첫 번째 QR 코드
+                } else {
+                    console.error('QR 코드 1 이미지를 찾을 수 없습니다.');
+                }
+
+                var qrImage2 = document.getElementById('qrImage2');
+                if (qrImage2) {
+                    qrImage2.src = url;  // 두 번째 QR 코드
+                } else {
+                    console.error('QR 코드 2 이미지를 찾을 수 없습니다.');
+                }
+            }
+        });
+    });
+</script>
+
+</script>
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    width: 100%;
+    touch-action: auto !important;
+    pointer-events: auto !important;
+    overflow-x: hidden !important; 
+}
+
+* {
+    touch-action: auto !important; 
+    pointer-events: auto !important;
+}
+
+.container {
+            pointer-events: auto;
+            text-align: center;
+            position: absolute;
+            left: 130px;
+            top: 200px;
+            width: 60%;
+            height: auto;
+            min-height: 40px;
+            max-width: 400px;
+            padding: 10px;
+            z-index: 0;
+}
+
+.image-container {
+    position: relative;
+            left: 5px;
+            top: 2px;
+            max-width: 100%; 
+     
+}
+
+.container .image-container img {
+            width: 550px;  
+            height: 300px;
+            z-index: 1;
+        }
+
+.container2 {
+        position: absolute;
+            left: 130px;
+            top: 505px;
+            width: 60%;
+            height: auto;
+            min-height: 40px;
+            max-width: 400px; 
+            padding: 10px;
+            z-index: 0;
+}
+
+.container2 .image-container img {
+            width: 550px;  
+            height: 300px;
+            z-index: 1;
+        }
+
+
+.container3 {
+        position: absolute;
+            left: 520px;
+            top: 420px;
+            width: 60%;
+            height: auto;
+            min-height: 40px;
+            max-width: 400px; 
+            padding: 10px;
+            z-index: 0;
+}
+
+
+.container3 .image-container img {
+            width: 50px;  
+            height: 50px;
+            z-index: 1;
+        }
+
+.container4 {
+        position: absolute;
+            left: 580px;
+            top: 410px;
+            width: 60%;
+            height: auto;
+            min-height: 40px;
+            max-width: 400px; 
+            padding: 10px;
+            z-index: 0;
+}
+
+.container4 .image-container img {
+            width: 60px;  
+            height: 60px;
+            z-index: 1;
+        }
+
+.container5 {
+        position: absolute;
+            left: 230px;
+            top: 300px;
+            width: 60%;
+            height: auto;
+            min-height: 40px;
+            max-width: 400px; 
+            padding: 10px;
+            z-index: 0;
+}
+
+.container5 .image-container img {
+            width: 100px;  
+            height: 100px;
+            z-index: 2;
+        }
+
+.container6 {
+        position: absolute;
+            left: 290px;
+            top: 280px;
+            width: 60%;
+            height: auto;
+            min-height: 40px;
+            max-width: 400px; 
+            padding: 10px;
+            z-index: 0;
+}
+
+.container6 .image-container img {
+            width: 150px;  
+            height: 140px;
+            z-index: 0;
+        }
+        body {
+            font-family: "맑은 고딕", sans-serif;
+        }
+
+.container7 {
+            padding-top: 870px;
+        }
+        .dashed-line {
+            border-top: 1px dashed black;
+            width: 80%;
+            margin: 0 auto;
+            padding: 0;
+            height: 0;
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: stretch; 
+            justify-content: flex-start; 
+            width: 80%;
+            margin: 0 auto;
+            padding: 0; 
+        }
+        .container7 .image {
+            width: 150px;
+            height: auto;
+            margin: 0;
+            padding: 0; 
+            display: block;
+            margin-right: 10px;
+            border-right: 1px solid #000000;
+            box-shadow: none;
+        }
+        .text {
+            padding-top: 10px;
+            font-size: 12pt;
+            color: rgb(0, 0, 0);
+            line-height: 19px;
+            padding-left: 30px; 
+        }
+</style>
+
+<style class="crownix-theme" type="text/css">
+        .crownix-search-mark {
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+    position: relative;
+    z-index: -1;
+}
+
+.crownix-toolbar-gradient{background:rgb(119,119,119);background:-moz-linear-gradient(top, rgb(119,119,119) 0%, rgb(139,139,139) 100%);;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(119,119,119)), color-stop(100%,rgb(139,139,139)));;background:-webkit-linear-gradient(top, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;background:-o-linear-gradient(top, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;background:-ms-linear-gradient(top, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;background:linear-gradient(to bottom, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#777777", endColorstr="#8b8b8b",GradientType=0 );;} .crownix-container-gradient{background:rgb(248,248,248);background:-moz-linear-gradient(top, rgb(248,248,248) 0%, rgb(208,208,208) 100%);;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(248,248,248)), color-stop(100%,rgb(208,208,208)));;background:-webkit-linear-gradient(top, rgb(248,248,248) 0%,rgb(208,208,208) 100%);;background:-o-linear-gradient(top, rgb(248,248,248) 0%,rgb(208,208,208) 100%);;background:-ms-linear-gradient(top, rgb(248,248,248) 0%,rgb(208,208,208) 100%);;background:linear-gradient(to bottom, rgb(248,248,248) 0%,rgb(208,208,208) 100%);;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f8f8f8", endColorstr="#D0D0D0",GradientType=0 );;} .crownix-toolbar-dropitem-enable:after{content:"";;width:0;;height:0;;position:absolute;;right:5px;;top:50%;;margin-top:-3px;;border-width:9px 6px 0 6px;;border-style:solid;;border-color:#FFFFFF transparent;} .crownix-toolbar-icon-color{color:#FFFFFF;stroke:#FFFFFF;fill:#FFFFFF;} .crownix-toolbar-separator{border-left:1px solid rgba(255,255,255,0.3);border-top:1px solid rgba(255,255,255,0.3);} .crownix-toolbar-icon-border{border:1px solid rgba(255,255,255,0.3);} .crownix-toolbar-icon-svg{stroke:#FFFFFF;fill:#FFFFFF;} .crownix-toolbar-item-enable:hover{border:1px solid rgba(255,255,255,0.8) !important;;box-shadow:inset 0 0 7px rgba(255,255,255,0.8);;} .crownix-toolbar-item-enable-hover{border:1px solid rgba(255,255,255,0.8) !important;;box-shadow:inset 0 0 7px rgba(255,255,255,0.8);;} .crownix-toolbar-dropitem-enable:hover{border:1px solid rgba(255,255,255,0.8) !important;;box-shadow:inset 0 0 7px rgba(255,255,255,0.8);;} .crownix-toolbar-dropitem-enable-hover{border:1px solid rgba(255,255,255,0.8) !important;;box-shadow:inset 0 0 7px rgba(255,255,255,0.8);;} .crownix-toolbar-item-enable:active{border:1px solid rgba(255,255,255,0.5) !important;;box-shadow:inset 0 0 7px rgba(255,255,255,0.3);;} .crownix-toolbar-dropitem-enable:active{border:1px solid rgba(255,255,255,0.5) !important;;box-shadow:inset 0 0 7px rgba(255,255,255,0.3);;} .crownix-page{border:1px solid rgb(224,224,224);box-shadow:2px 2px 5px rgb(174,174,174);} .crownix-slide{background:rgba(159,159,159,0.8);background:-moz-linear-gradient(top, rgba(159,159,159,0.8) 0%, rgba(179,179,179,0.8) 100%);;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(159,159,159,0.8)), color-stop(100%,rgba(179,179,179,0.8)));;background:-webkit-linear-gradient(top, rgba(159,159,159,0.8) 0%,rgba(179,179,179,0.8) 100%);;background:-o-linear-gradient(top, rgba(159,159,159,0.8) 0%,rgba(179,179,179,0.8) 100%);;background:-ms-linear-gradient(top, rgba(159,159,159,0.8) 0%,rgba(179,179,179,0.8) 100%);;background:linear-gradient(to bottom, rgba(159,159,159,0.8) 0%,rgba(179,179,179,0.8) 100%);;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f9f9f", endColorstr="#b3b3b3",GradientType=0 );;} .crownix-tab-background{background:rgb(119,119,119);background:-moz-linear-gradient(top, rgb(119,119,119) 0%, rgb(139,139,139) 100%);;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(119,119,119)), color-stop(100%,rgb(139,139,139)));;background:-webkit-linear-gradient(top, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;background:-o-linear-gradient(top, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;background:-ms-linear-gradient(top, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;background:linear-gradient(to bottom, rgb(119,119,119) 0%,rgb(139,139,139) 100%);;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#777777", endColorstr="#8b8b8b",GradientType=0 );;} .crownix-slide-toggle{background:rgba(119,119,119,0.8);background:-moz-linear-gradient(top, rgba(119,119,119,0.8) 0%, rgba(139,139,139,0.8) 100%);;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(119,119,119,0.8)), color-stop(100%,rgba(139,139,139,0.8)));;background:-webkit-linear-gradient(top, rgba(119,119,119,0.8) 0%,rgba(139,139,139,0.8) 100%);;background:-o-linear-gradient(top, rgba(119,119,119,0.8) 0%,rgba(139,139,139,0.8) 100%);;background:-ms-linear-gradient(top, rgba(119,119,119,0.8) 0%,rgba(139,139,139,0.8) 100%);;background:linear-gradient(to bottom, rgba(119,119,119,0.8) 0%,rgba(139,139,139,0.8) 100%);;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#777777", endColorstr="#8b8b8b",GradientType=0 );;} .crownix-tab{color:#FFFFFF;} .crownix-left-arrow:before, .crownix-right-arrow:before{border-color:#FFFFFF;} .crownix-field-dialog-countingBar{background:#1E77FC;} .crownix-field-dialog-progress{background:rgb(239,239,239);background:-moz-linear-gradient(top, rgb(239,239,239) 0%, rgb(199,199,199) 100%);;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(239,239,239)), color-stop(100%,rgb(199,199,199)));;background:-webkit-linear-gradient(top, rgb(239,239,239) 0%,rgb(199,199,199) 100%);;background:-o-linear-gradient(top, rgb(239,239,239) 0%,rgb(199,199,199) 100%);;background:-ms-linear-gradient(top, rgb(239,239,239) 0%,rgb(199,199,199) 100%);;background:linear-gradient(to bottom, rgb(239,239,239) 0%,rgb(199,199,199) 100%);;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#efefef", endColorstr="#c7c7c7",GradientType=0 );;} .crownix-confirm-background{background:#1E77FC;} .crownix-refresh-icon-color{fill:#1E77FC;} .crownix-pen-button-color{color:#1E77FC;fill:#1E77FC;border-color:#1E77FC;} #crownix-toolbar{height:44px;} #m2soft-crownix-container{top:44px;  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;} .crownix-toolbar-item{width:34px;height:34px;margin-left:5px;} .crownix-toolbar-dropitem{width:100px;height:34px;margin-left:5px;} #crownix-toolbar{font-size:20px;} .crownix-toolbar-dropitem div{margin-top:5px;} .crownix-toolbar-dropitem-enable:after{border-width:9px 6px 0px 6px;margin-top:-3px;} .crownix-toolbar-dropitem-enable.active:after{border-width: 0px 6px 9px 6px;margin-top:-3px;} .crownix-toolbar-separator{height:20px;margin-top:12px;} .crownix-toolbar-mark{height:44px;} .crownix-toolbar-mark .crownix-helper{height:100%;display:inline-block;vertical-align:middle;} .crownix-toolbar-mark .crownix-helper svg{width:15px;height:32px;vertical-align:middle;} .crownix-toolbar-dropitem-enable .dropdown li button{font-size:15px;} .crownix-toolbar-dropitem-enable .dropdown{top:45px;} .crownix-toolbar-dropitem-enable .dropdown li button img{width:24px;height:24px;} .crownix-toolbar-dropitem-enable .dropdown li button svg{width:24px;height:24px;} .crownix-dock#crownix-toolbar .crownix-toolbar-dropitem-enable .dropdown:before{top:100%;border-width:8px 8px 0px 8px;} .crownix-dock#crownix-toolbar .crownix-toolbar-dropitem-enable .dropdown:after{top:100%;border-width:6px 0px 6px 6px;}  </style></head>
+<body style="margin: 0px; height: 100%;">
+<div id="crownix-viewer" style="position: absolute; width: 100%; height: 100%;     overflow-x: auto;  overflow-y: auto;  display: flex;
+justify-content: center; align-items: center;"><div id="m2soft-crownix-container" class="crownix-container crownix-container-gradient notranslate"><div id="m2soft-crownix-page" style="width: 802.913px; height: 1134.95px; padding: 12px; transform-origin: 0px 0px;      position: relative; display: flex;    justify-content: center;    align-items: center; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; scale(1) translateZ(0px); visibility: visible;"><canvas id="m2soft-crownix-canvas" width="802" height="1134.9514563106795" class="crownix-page" style="position: absolute; z-index: 1;"></canvas><div id="m2soft-crownix-text" class="crownix-text crownix-page" style="position: absolute; width: 802.913px; height: 1134.95px; z-index: 2;">
+<div class="crownix-search-mark" style="position: absolute; top: 0px; left: 0px; width: 802.913px; height: 1134.95px;"></div>
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 이수증명서 출력일자 -->
+<div style="position: absolute; white-space: pre; left: 143px; top: 831px; text-align: center; line-height: 26px; font-family: &quot;맑은 고딕&quot;, &quot;crownix-font-맑은 고딕&quot;; font-size: 18pt; color: rgb(0, 0, 0); height: 26px; letter-spacing: 0in; width: 529px; min-height: 27px;">이수증명서 출력일자 : 2025. 03. 16</div><div class="container2">
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 이수증명서 출력일자-->
+    <div class="image-container">
+        <img src="image3.jpg" class="image" />
+    </div></div>
+
+    <div class="container7">
+        <hr class="dashed-line"> 
+        <div class="content-wrapper">
+            <img id="qrImage1" alt="QR 코드" class="image">
+            <div class="text">
+                <p>※ QR코드로 건설업기초교육 이수내역 조회가 가능하며,</p>
+                <p>&nbsp;&nbsp;조회시 결과페이지 서버주소 http://k2b.kosha.or.kr를</p>
+                <p>&nbsp;&nbsp;확인하시기 바랍니다.</p>
+            </div>
+        </div>
+        <hr class="dashed-line"> 
+    </div>
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 이름 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 299px; text-align: right; line-height: 11px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 11px; letter-spacing: 0in; width: 102px; min-height: 12px;z-index: 1;">이    름 :</div>
+<div style="position: absolute; white-space: pre; left: 473px; top: 299px; text-align: left; line-height: 10px; font-family: 돋움체, crownix-font-돋움체; font-size: 6pt; color: rgb(0, 0, 0); font-weight: bold; height: 10px; letter-spacing: 0in; width: 183px; min-height: 11px;z-index: 1;">KANG YUBIN</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 이름 -->
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 생년월일 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 313px; text-align: right; line-height: 12px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 12px; letter-spacing: 0in; width: 102px; min-height: 13px;z-index: 1;">생년월일 :</div>
+<div style="position: absolute; white-space: pre; left: 473px; top: 313px; text-align: left; line-height: 12px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 12px; letter-spacing: 0in; width: 183px; min-height: 13px;z-index: 1;">1974.10.19</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 생년월일 -->
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 국적 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 328px; text-align: right; line-height: 12px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 12px; letter-spacing: 0in; width: 102px; min-height: 13px;z-index: 1;">국    적 :</div>
+<div style="position: absolute; white-space: pre; left: 473px; top: 328px; text-align: left; line-height: 12px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 12px; letter-spacing: 0in; width: 183px; min-height: 13px;z-index: 1;">중국</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 국적-->
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 체류자격 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 343px; text-align: right; line-height: 13px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 13px; letter-spacing: 0in; width: 103px; min-height: 14px;z-index: 1;">체류자격 :</div>
+<div style="position: absolute; white-space: pre; left: 474px; top: 343px; text-align: left; line-height: 13px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 13px; letter-spacing: 0in; width: 182px; min-height: 14px;z-index: 1;">F-2 (거주)</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 체류자격 -->
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 체류기간 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 360px; text-align: right; line-height: 11px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 11px; letter-spacing: 0in; width: 103px; min-height: 12px;z-index: 1;">체류기간 :</div>
+<div style="position: absolute; white-space: pre; left: 474px; top: 360px; text-align: left; line-height: 11px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 11px; letter-spacing: 0in; width: 182px; min-height: 12px;z-index: 1;">2024.07.18 ~ 2025.06.17</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 체류기간 -->
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 등록번호 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 375px; text-align: right; line-height: 13px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 13px; letter-spacing: 0in; width: 102px; min-height: 14px;z-index: 1;">등록번호 :</div>
+<div style="position: absolute; white-space: pre; left: 473px; top: 375px; text-align: left; line-height: 13px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 13px; letter-spacing: 0in; text-decoration: none; color: inherit; user-select: text; width: 183px; min-height: 14px;z-index: 1;">2024-012-41678</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 등록번호 -->
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 이수일자 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 392px; text-align: right; line-height: 12px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 12px; letter-spacing: 0in; width: 102px; min-height: 13px; z-index: 1;">   이수일자 :</div>
+<div style="position: absolute; white-space: pre; left: 473px; top: 392px; text-align: left; line-height: 12px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 12px; letter-spacing: 0in; width: 183px; min-height: 13px; z-index: 1;">2024.07.01</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 이수일자 -->
+<div style="position: absolute; white-space: pre; left: 367px; top: 407px; text-align: right; line-height: 12px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 12px; letter-spacing: 0in; width: 102px; min-height: 13px; z-index: 1;">교육실시기관:</div>
+<div style="position: absolute; white-space: pre; left: 473px; top: 408px; text-align: left; line-height: 10px; font-family: 돋움체, crownix-font-돋움체; font-size: 6pt; color: rgb(0, 0, 0); font-weight: bold; height: 10px; letter-spacing: 0in; width: 183px; min-height: 11px; z-index: 1;">건설안전보건교육원(주)</div>
+<div style="position: absolute; white-space: pre; left: 270px; top: 451px; text-align: left; line-height: 21px; font-family: 돋움체, crownix-font-돋움체; font-size: 14pt; color: rgb(0, 0, 0); font-weight: bold; height: 21px; letter-spacing: -0.014in; width: 255px; min-height: 22px; z-index: 1;">한국산업안전보건공단이사장</div>
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 발급일자 -->
+<div style="position: absolute; white-space: pre; left: 351px; top: 424px; text-align: center; line-height: 13px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 0); font-weight: bold; height: 13px; letter-spacing: 0in; width: 87px; min-height: 14px; z-index: 1;">2025. 03. 01</div>
+<div style="position: absolute; white-space: pre; left: 459px; top: 424px; text-align: left; line-height: 13px; font-family: 돋움체, crownix-font-돋움체; font-size: 8pt; color: rgb(0, 0, 255); font-weight: bold; height: 13px; letter-spacing: 0in; width: 110px; min-height: 14px; z-index: 1;">(발급일자)</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 발급일자 -->
+<div class="container">
+    <div class="image-container">
+        <img src="image3.jpg" class="image" />
+    </div>
+</div>
+<div class="container3">
+    <div class="image-container">
+        <img src="image1.gif" class="image" />
+    </div>
+</div>
+<div class="container4">
+    <div class="image-container">
+        <img id="qrImage2" class="image" />
+    </div>
+</div>
+<!-- ⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟⮟ 증명사진 -->
+<div class="container5">
+    <div class="image-container">
+        <img src="image1su.png" class="image" />
+    </div>
+</div>
+<!-- ⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝⮝ 증명사진 -->
+<div class="container6">
+    <div class="image-container">
+        <img src="image4.gif" class="image" />
+    </div>
+</div>
+
+<div style="position: absolute; white-space: pre; left: 164px; top: 551px; text-align: left; line-height: 18px; font-family: 돋움체, crownix-font-돋움체; font-size: 12pt; color: rgb(0, 0, 0); height: 18px; letter-spacing: 0in; width: 495px; min-height: 19px;">    본 증은 【산업안전보건법 제31조】에 의한 【건설업 기초안</div><div style="position: absolute; white-space: pre; left: 164px; top: 572px; text-align: left; line-height: 19px; font-family: 돋움체, crownix-font-돋움체; font-size: 12pt; color: rgb(0, 0, 0); height: 19px; letter-spacing: 0in; width: 495px; min-height: 20px;">전보건교육】을 받은 사람에게 발급하는 교육 이수증 입니다.</div><div style="position: absolute; white-space: pre; left: 164px; top: 616px; text-align: center; line-height: 18px; font-family: 돋움체, crownix-font-돋움체; font-size: 12pt; color: rgb(0, 0, 0); font-weight: bold; height: 18px; letter-spacing: 0in; width: 495px; min-height: 19px;">주 의 사 항</div><div style="position: absolute; white-space: pre; left: 164px; top: 659px; text-align: left; line-height: 19px; font-family: 돋움체, crownix-font-돋움체; font-size: 12pt; color: rgb(0, 0, 0); height: 19px; letter-spacing: 0in; width: 495px; min-height: 20px;"> 1. 본 증은 타인에게 대여 할 수 없습니다.</div><div style="position: absolute; white-space: pre; left: 164px; top: 681px; text-align: left; line-height: 18px; font-family: 돋움체, crownix-font-돋움체; font-size: 12pt; color: rgb(0, 0, 0); height: 18px; letter-spacing: 0in; width: 495px; min-height: 19px;"> 2. 본 증을 분실 또는 훼손하였을 경우 교육실시기관 또는</div><div style="position: absolute; white-space: pre; left: 164px; top: 703px; text-align: left; line-height: 18px; font-family: 돋움체, crownix-font-돋움체; font-size: 12pt; color: rgb(0, 0, 0); height: 18px; letter-spacing: 0in; width: 495px; min-height: 19px;">    한국산업안전보건공단에서 재발급 받을 수 있습니다.</div><div style="position: absolute; white-space: pre; left: 164px; top: 746px; text-align: center; line-height: 19px; font-family: 돋움체, crownix-font-돋움체; font-size: 12pt; color: rgb(0, 0, 0); font-weight: bold; height: 19px; letter-spacing: 0in; width: 495px; min-height: 20px;">고용노동부  ·한국산업안전보건공단</div><div style="position: absolute; white-space: pre; left: 165px; top: 233px; text-align: center; line-height: 29px; font-family: &quot;맑은 고딕&quot;, &quot;crownix-font-맑은 고딕&quot;; font-size: 20pt; color: rgb(0, 0, 0); font-weight: bold; height: 29px; letter-spacing: 0in; width: 491px; min-height: 30px;">건설업 기초안전보건교육 이수증</div><div style="position: absolute; white-space: pre; left: 165px; top: 269px; text-align: center; line-height: 19px; font-family: &quot;맑은 고딕&quot;, &quot;crownix-font-맑은 고딕&quot;; font-size: 12pt; color: rgb(0, 0, 0); height: 19px; letter-spacing: 0in; width: 491px; min-height: 20px;">(Certificate of Basic OSH Training in Construction)</div><div style="position: absolute; white-space: pre; left: 139px; top: 93px; text-align: center; line-height: 27px; font-family: &quot;맑은 고딕&quot;, &quot;crownix-font-맑은 고딕&quot;; font-size: 18pt; color: rgb(0, 0, 0); height: 27px; letter-spacing: 0in; width: 541px; min-height: 28px;">【건설업 기초안전보건교육 】 이수 증명서</div><div style="position: absolute; white-space: pre; left: 139px; top: 138px; text-align: center; line-height: 19px; font-family: &quot;맑은 고딕&quot;, &quot;crownix-font-맑은 고딕&quot;; font-size: 13pt; color: rgb(0, 0, 0); height: 19px; letter-spacing: 0in; width: 541px; min-height: 20px;">본 교육이수 증명서는 산업안전보건법 제 31조 따라</div><div style="position: absolute; white-space: pre; left: 139px; top: 158px; text-align: center; line-height: 20px; font-family: &quot;맑은 고딕&quot;, &quot;crownix-font-맑은 고딕&quot;; font-size: 13pt; color: rgb(0, 0, 0); height: 20px; letter-spacing: 0in; width: 541px; min-height: 21px;">【건설업기초안전보건교육】을 이수하였음을 증명하며,</div><div style="position: absolute; white-space: pre; left: 139px; top: 178px; text-align: center; line-height: 20px; font-family: &quot;맑은 고딕&quot;, &quot;crownix-font-맑은 고딕&quot;; font-size: 13pt; color: rgb(0, 0, 0); height: 20px; letter-spacing: 0in; width: 541px; min-height: 21px;"> 이수증(카드)과 동일한 효력이 있습니다.</div></div></div><div class="crownix-dialog-message"><div class="crownix-dialog-message-pagenum" style="display: none;"><img src="image6.gif" style="display: none;"><span>1 / 1</span></div></div><div class="crownix-dialog-message"><div class="crownix-dialog-message-pagenum"><img src="image6.gif"><span></span></div></div><div class="crownix-slide"><div class="crownix-tab-menu"><ul class="crownix-tab-button-group"></ul></div><div class="crownix-tab-content"></div></div><div class="crownix-tab-buttons"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="100%" viewBox="0 0 15 32" preserveAspectRatio="none" enable-background="new 0 0 15 32" xml:space="preserve" class="crownix-toolbar-icon-color crownix-toolbar-gradient crownix-tab-button"><g>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="11.375,25.656 2.625,16.031 11.375,6.344"></polyline></g></svg><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="100%" viewBox="0 0 15 32" preserveAspectRatio="none" enable-background="new 0 0 15 32" xml:space="preserve" class="crownix-toolbar-icon-color crownix-toolbar-gradient crownix-tab-button"><g>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="3.625,25.656 12.375,16.031 3.625,6.344"></polyline></g></svg></div><div class="iScrollHorizontalScrollbar iScrollLoneScrollbar" style="    overflow-x: auto;  overflow-y: auto; height: 7px; visibility: hidden;"><div class="iScrollIndicator" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px); display: none; width: 1254px; visibility: visible; background: rgba(0, 0, 0, 0.5);"></div></div><div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="    overflow-x: auto;  overflow-y: auto; width: 7px; visibility: hidden;"><div class="iScrollIndicator" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px); display: block; height: 643px; visibility: visible; background: rgba(0, 0, 0, 0.5);"></div></div></div><div><iframe id="crownix-download-iframe" name="crownix-download-iframe" style="display: none"></iframe><form id="crownix-download-form" target="crownix-download-iframe" method="post" style="display:none" accept-charset="utf-8"><input type="hidden" name="filename"><input type="hidden" name="delete" value="true"></form></div><div class="crownix-toolbar-warp"><div id="crownix-toolbar" class="crownix-toolbar-gradient"><ul id="crownix-toolbar-menu" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) scale(1) translateZ(0px); width: 742px;"><li id="crownix-toolbar-close" title="닫기" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable" style="display: none;"><button type="button" title="닫기" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="4,21 4,28.5 28,28.5 28,3.5 4,3.5 4,11"></polyline>	<polygon fill="none" stroke-width="1.0" stroke-miterlimit="10" points="21.4,13.6 12.7,13.6 12.7,10 6.1,15.1 6.1,15.3 6.12,16.551 12.671,21.758 12.671,18.1 21.4,18.1 "></polygon></g></svg></button></li><div class="crownix-toolbar-separator" style="display: none;"></div><li id="crownix-toolbar-first" title="첫 페이지로 이동" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable"><button type="button" title="첫 페이지로 이동" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<circle fill="none" stroke-width="1.3" stroke-miterlimit="10" cx="16" cy="16" r="12.700"></circle>	<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="11.083" y1="9.814" x2="11.083" y2="22.223"></line>	<g> 		<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="23.756" y1="15.93" x2="13.703" y2="15.93"></line>		<polyline fill="none" stroke-width="1.3" stroke-miterlimit="10" points="19.293,9.751 13.703,15.446 13.703,16.501 19.311,22.108"></polyline>	</g></g></svg></button></li><li id="crownix-toolbar-prev" title="앞 페이지로 이동" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable"><button type="button" title="앞 페이지로 이동" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<g>		<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="23.309" y1="15.992" x2="9.429" y2="15.992"></line>		<polyline fill="none" stroke-width="1.3" stroke-miterlimit="10" points="15.019,9.813 9.429,15.509 9.429,16.563 15.037,22.171"></polyline>	</g>	<circle fill="none" stroke-width="1.3" stroke-miterlimit="10" cx="16" cy="16" r="12.700"></circle></g></svg></button></li><li id="crownix-toolbar-next" title="뒷 페이지로 이동" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable"><button type="button" title="뒷 페이지로 이동" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<g>		<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="8.692" y1="15.992" x2="22.57" y2="15.992"></line>		<polyline fill="none" stroke-width="1.3" stroke-miterlimit="10" points="16.98,9.813 22.57,15.509 22.57,16.563 16.963,22.171"></polyline>	</g>	<circle fill="none" stroke-width="1.3" stroke-miterlimit="10" cx="16" cy="16" r="12.700"></circle></g></svg></button></li><li id="crownix-toolbar-last" title="마지막 페이지로 이동" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable"><button type="button" title="마지막 페이지로 이동" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<circle fill="none" stroke-width="1.3" stroke-miterlimit="10" cx="16" cy="16" r="12.700"></circle>	<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="20.918" y1="9.814" x2="20.918" y2="22.223"></line>	<g>		<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="8.244" y1="15.93" x2="18.297" y2="15.93"></line>		<polyline fill="none" stroke-width="1.3" stroke-miterlimit="10" points="12.707,9.751 18.297,15.446 18.297,16.501 12.689,22.108"></polyline>	</g></g></svg></button></li><div class="crownix-toolbar-separator" style="display: block;"></div><li id="crownix-toolbar-move" title="페이지 이동" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable"><button type="button" title="페이지 이동" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="10.3,19.8 10.1,28.7 21,28.7 27.5,21.5 27.5,9.7 10.3,9.7 10.3,12.45"></polyline>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="21.5,9 21.5,3.85 3.5,3.85 3.5,22.577 10.1,22.577"></polyline>	<polygon fill="none" stroke-width="1.0" stroke-miterlimit="10" points="8.825,14.800 14.9,14.800 14.9,12.728 18.613,15.681 18.613,16.365 18.613,17.052 14.9,20.003 14.9,17.900 8.825,17.900"></polygon>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="27,21.5 21.5,21.5 21.5,27.7"></polyline></g></svg></button></li><div class="crownix-toolbar-separator" style="display: block;"></div><li id="crownix-toolbar-prevDoc" title="이전 문서" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable" style="display: none;"><button type="button" title="이전 문서" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g><polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="5.1,28.7 21,28.7 27.5,21.5 27.5,4.7 5.1,4.7 5.1,29.3"></polyline> <polygon fill="none" stroke-width="1.0" stroke-miterlimit="10" points="18.613,14.800 12.538,14.800 12.538,12.728 8.825,15.681 8.825,16.365 8.825,17.052 12.538,20.003 12.538,17.900 18.613,17.900"></polygon> <polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="27,21.5 21.5,21.5 21.5,27.7"></polyline> </g> </svg></button></li><li id="crownix-toolbar-nextDoc" title="이후 문서" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable" style="display: none;"><button type="button" title="이후 문서" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g><polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="5.1,28.7 21,28.7 27.5,21.5 27.5,4.7 5.1,4.7 5.1,29.3"></polyline> <polygon fill="none" stroke-width="1.0" stroke-miterlimit="10" points="8.825,14.800 14.9,14.800 14.9,12.728 18.613,15.681 18.613,16.365 18.613,17.052 14.9,20.005 14.9,17.933 8.825,17.933"></polygon> <polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="27,21.5 21.5,21.5 21.5,27.7"></polyline> </g> </svg></button></li><div class="crownix-toolbar-separator" style="display: none;"></div><li id="crownix-toolbar-zoomin" title="확대" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-enable" style=""><button type="button" title="확대" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<circle fill="none" stroke-width="1.3" stroke-miterlimit="10" cx="17.631" cy="14.191" r="11.000"></circle>	<g>		<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="17.615" y1="8.107" x2="17.615" y2="20.504"></line>		<line fill="none" stroke-width="1.3" stroke-miterlimit="10" x1="23.813" y1="14.306" x2="11.416" y2="14.306"></line>	</g>	<polygon stroke="none" points="10.447,23.029 4.279,29.199 2.979,29.199 2.979,28.074 9.089,21.727"></polygon></g></svg></button></li><li id="crownix-toolbar-zoomout" title="축소" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-enable" style=""><button type="button" title="축소" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<circle fill="none" stroke-width="1.3" stroke-miterlimit="10" cx="17.631" cy="14.191" r="11.000"></circle>	<g>		<line fill="none" stroke-width="1.4" stroke-miterlimit="10" x1="23.813" y1="14.306" x2="11.416" y2="14.306"></line>	</g>	<polygon stroke="none" points="10.447,23.029 4.279,29.199 2.979,29.199 2.979,28.074 9.089,21.727"></polygon></g></svg></button></li><li id="crownix-toolbar-ratio" title="비율" class="crownix-toolbar-dropitem crownix-toolbar-icon-border crownix-toolbar-button-zindex crownix-toolbar-dropitem-enable"><div class="crownix-toolbar-icon-color"><button type="button" title="비율" class="crownix-toolbar-button">100%<div class="crownix-absolute-100"></div></button></div><ul class="dropdown"><li id="crownix-toolbar-25"><button type="button" class="crownix-toolbar-button" title="25%">25%</button></li><li id="crownix-toolbar-50"><button type="button" class="crownix-toolbar-button" title="50%">50%</button></li><li id="crownix-toolbar-75"><button type="button" class="crownix-toolbar-button" title="75%">75%</button></li><li id="crownix-toolbar-100"><button type="button" class="crownix-toolbar-button" title="100%">100%</button></li><li id="crownix-toolbar-125"><button type="button" class="crownix-toolbar-button" title="125%">125%</button></li><li id="crownix-toolbar-150"><button type="button" class="crownix-toolbar-button" title="150%">150%</button></li><li id="crownix-toolbar-200"><button type="button" class="crownix-toolbar-button" title="200%">200%</button></li><li id="crownix-toolbar-250"><button type="button" class="crownix-toolbar-button" title="250%">250%</button></li><li id="crownix-toolbar-width"><button type="button" class="crownix-toolbar-button" title="가로 맞춤">가로 맞춤</button></li><li id="crownix-toolbar-height"><button type="button" class="crownix-toolbar-button" title="세로 맞춤">세로 맞춤</button></li></ul></li><div class="crownix-toolbar-separator" style="display: block;"></div><li id="crownix-toolbar-save" title="저장" class="crownix-toolbar-dropitem crownix-toolbar-icon-border crownix-toolbar-button-zindex crownix-toolbar-dropitem-enable"><button type="button" title="저장" class="crownix-toolbar-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<polygon fill="none" stroke-width="1.2" stroke-miterlimit="10" points="3.412,3.735 8.156,3.735 24.889,3.735 28.588,6.995 28.588,28.700 3.412,28.700"></polygon>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="8.537,3.598 8.537,11.711 23.324,11.711 23.324,3.598"></polyline>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="7.400,28.700 7.400,16.700 24.700,16.700 24.700,28.700"></polyline></g></svg></button><ul class="dropdown"><li id="crownix-toolbar-pdf"><button type="button" title="PDF" class="crownix-toolbar-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><path fill="none" stroke="#85929E" stroke-width="1" stroke-miterlimit="10" d="M0.505,2.993v17.424c0,0-0.196,3.083,3.278,3.083	c3.473,0,16.858,0,16.858,0s2.856-0.221,2.856-2.688c0-2.463,0-17.819,0-17.819s0.234-2.488-2.645-2.488c-2.881,0-17.797,0-17.797,0	S0.505,0.262,0.505,2.993z"></path><path fill="#E41737" stroke="#E41737" stroke-width="0.2" stroke-miterlimit="10" d="M11.549,9.045c0,0-4.489,10.481-7.78,11.242	c0,0-0.171-1.122,2.911-3.31c0,0-3.005,1.294-3.386,3.12c0,0,0.095,0.476,1.198,0.438c0,0,0.932,0.19,4.014-4.261	c0,0,0.026-0.04,0.075-0.114c0.44-0.678,2.685-4.181,3.216-6.049c0,0,1.121,2.929,3.252,4.47c0,0-4.311,0.605-6.624,1.641	l-0.072,0.1c0,0,3.652-1.17,7.39-1.298c0,0,4.337,2.254,5.065,0.998v-0.057c0,0-0.999,0.442-3.867-0.999	c0,0,4.052-0.171,3.938,0.828c0,0,0.756-0.757-1.256-1.228c0,0-2.026-0.229-3.566-0.1c0,0-2.994-1.228-3.901-5.521	c0,0,0.563-2.839,0.505-3.923L11.92,7.847c0,0-0.711-3.41,0.236-4.223c0,0,0.392,0.1,0.563,1.027c0,0,0.458-1.084-0.563-1.17	c0,0-0.764-0.257-0.893,1.127C11.264,4.608,10.955,7.21,11.549,9.045z"></path></svg>PDF</button></li><li id="crownix-toolbar-doc" style="display: none;"><button type="button" title="DOC" class="crownix-toolbar-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><path fill="none" stroke="#85929E" stroke-width="1" stroke-miterlimit="10" d="M0.505,2.993v17.424c0,0-0.196,3.083,3.278,3.083	c3.473,0,16.858,0,16.858,0s2.856-0.221,2.856-2.688c0-2.463,0-17.819,0-17.819s0.234-2.488-2.645-2.488c-2.881,0-17.797,0-17.797,0	S0.505,0.262,0.505,2.993z"></path><path fill="#3578BD" d="M4.362,6.428h5.344v0.806c0,0-1.35,0.469-1.444,1.481l-0.075,5.42l3.787-7.708h2.494v7.708L17.3,8.584	c0,0,0.618-1.237-0.749-1.313l-0.039-0.844h4.127v0.769l-0.281,0.112l-5.945,11.063h-2.438l-0.056-6.881l-3.975,6.788l-2.531,0.094	L5.394,8.697c0,0-0.169-1.257-1.031-1.388V6.428z"></path></svg>DOC</button></li><li id="crownix-toolbar-xls" style="display: none;"><button type="button" title="XLS" class="crownix-toolbar-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><path fill="none" stroke="#85929E" stroke-width="1" stroke-miterlimit="10" d="M0.505,2.993v17.424c0,0-0.196,3.083,3.278,3.083	c3.473,0,16.858,0,16.858,0s2.856-0.221,2.856-2.688c0-2.463,0-17.819,0-17.819s0.234-2.488-2.645-2.488c-2.881,0-17.797,0-17.797,0	S0.505,0.262,0.505,2.993z"></path><polygon fill="#6CA75C" points="4.625,6.294 9.688,6.294 12.238,9.032 15.088,6.294 20.188,6.294 14.863,12.069 20.188,18.106 	14.863,18.106 11.713,14.618 9.238,17.094 4.063,17.094 9.463,11.994 "></polygon></svg>XLS</button></li><li id="crownix-toolbar-ppt" style="display: none;"><button type="button" title="PPT" class="crownix-toolbar-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><path fill="none" stroke="#85929E" stroke-width="1" stroke-miterlimit="10" d="M0.505,2.993v17.424c0,0-0.196,3.083,3.278,3.083	c3.473,0,16.858,0,16.858,0s2.856-0.221,2.856-2.688c0-2.463,0-17.819,0-17.819s0.234-2.488-2.645-2.488c-2.881,0-17.797,0-17.797,0	S0.505,0.262,0.505,2.993z"></path><path fill="#C54C1C" d="M11.52,12V7.697c0,0,3.619-0.489,3.619,2.345c0,0,0.174,1.917-3.139,1.958H8.6v6.992h2.981v-4.533h2.668	c0,0,4.063-0.271,3.906-4.625c0,0,0.136-4.652-5.26-4.826H6.844v2.679H8.6V12H11.52z"></path></svg>PPT</button></li><li id="crownix-toolbar-hwp" style="display: none;"><button type="button" title="HWP" class="crownix-toolbar-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><path fill="none" stroke="#85929E" stroke-width="1" stroke-miterlimit="10" d="M0.505,2.993v17.424c0,0-0.196,3.083,3.278,3.083	c3.473,0,16.858,0,16.858,0s2.856-0.221,2.856-2.688c0-2.463,0-17.819,0-17.819s0.234-2.488-2.645-2.488c-2.881,0-17.797,0-17.797,0	S0.505,0.262,0.505,2.993z"></path><g>	<path fill="#00A0E9" d="M10.689,4.796c0,0,3.411,0.366,4.589,1.954c0,0,0.458,0.326-0.119-0.549c0,0-0.889-2.117-3.075-2.321		c0,0-0.794,0.021-1.25,0.57C10.834,4.451,10.49,4.77,10.689,4.796z"></path>	<path fill="#3897D4" d="M17.922,9.865c0,0-2.691-1.771-6.151,0c0,0-2.667,2.056,0.601,2.809c0,0,1.802,0.081,2.306-2.158		c0,0-0.168-2.789-3.339-3.033c0,0-2.931,0.021-3.339,0.204c0,0-0.265,0.183-0.24-0.407c0,0-0.24-2.015,3.244-1.628		c0,0,5.886,0.264,5.501,5.17c0,0-0.816,3.684-5.141,3.481c0,0-3.604-0.184-3.1-3.013c0,0-0.144-2.606,4.109-3.379		c0,0,3.076-0.692,5.119,0.265c0,0,0.506,0.223,0.553,0.936C18.043,9.112,18.123,9.979,17.922,9.865z"></path>	<path fill="#3897D4" d="M12.516,15.484c0,0-1.177,0.142-1.177,0.997c0,0.854,0.817,0.997,1.177,0.997		c0.361,0,1.153-0.144,1.153-0.978S12.516,15.484,12.516,15.484z"></path>	<path fill="#3897D4" d="M9.201,16.033v1.588c0,0,0.192,0.896,2.018,0.896s5.959-0.121,6.704-0.346		c0.745-0.225-0.48,1.588-0.48,1.588s-4.493,0.61-7.448,0.244c0,0-2.283,0.184-2.835-2.076l-0.12-1.894H9.201z"></path></g></svg>HWP</button></li><li id="crownix-toolbar-txt" style="display: none;"><button type="button" title="TXT" class="crownix-toolbar-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><path fill="none" stroke="#85929E" stroke-width="1" stroke-miterlimit="10" d="M0.505,2.993v17.424c0,0-0.196,3.083,3.278,3.083	c3.473,0,16.858,0,16.858,0s2.856-0.221,2.856-2.688c0-2.463,0-17.819,0-17.819s0.234-2.488-2.645-2.488c-2.881,0-17.797,0-17.797,0	S0.505,0.262,0.505,2.993z"></path><g><text x="12" y="19" font-family="Times, Arial" text-anchor="middle" font-weight="bold" font-size="20px" stroke="#566573" fill="#566573">T</text></g></svg>TXT</button></li><li id="crownix-toolbar-cell" style="display: none;"><button type="button" title="CELL" class="crownix-toolbar-button"><!--?xml version="1.0" encoding="utf-8"?--><!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><g>	<path fill="none" stroke="#84919D" stroke-miterlimit="10" d="M0.503,2.992v17.425c0,0-0.196,3.083,3.278,3.083		c3.473,0,16.857,0,16.857,0s2.855-0.221,2.855-2.688c0-2.463,0-17.82,0-17.82s0.234-2.487-2.645-2.487c-2.881,0-17.797,0-17.797,0		S0.503,0.262,0.503,2.992z"></path>	<g>		<polygon fill="#1E965A" points="17.982,17.262 15.959,17.827 15.959,12.274 17.982,12.069 		"></polygon>		<polygon fill="#1E965A" points="14.586,18.234 11.742,19.077 11.742,3.26 14.586,4.053 		"></polygon>		<polygon fill="#1E965A" points="10.368,19.541 6.518,20.737 6.518,8.278 10.368,8.278 		"></polygon>	</g></g></svg>CELL</button></li><li id="crownix-toolbar-brl" style="display: none;"><button type="button" title="BRL" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"><path fill="none" stroke="#85929E" stroke-width="1" stroke-miterlimit="10" d="M0.505,2.993v17.424c0,0-0.196,3.083,3.278,3.083	c3.473,0,16.858,0,16.858,0s2.856-0.221,2.856-2.688c0-2.463,0-17.819,0-17.819s0.234-2.488-2.645-2.488c-2.881,0-17.797,0-17.797,0	S0.505,0.262,0.505,2.993z"></path><g><text x="12" y="19" font-family="Times, Arial" text-anchor="middle" font-weight="bold" font-size="20px" stroke="#566573" fill="#566573">B</text></g></svg>BRL</button></li></ul></li><li id="crownix-toolbar-storage" title="보고서" class="crownix-toolbar-dropitem crownix-toolbar-icon-border crownix-toolbar-button-zindex crownix-toolbar-dropitem-disable" style="display: none;"><button type="button" title="보고서" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="7.3,17.8 7.1,28.7 28.5,28.7 28.5,11.7 24.5,7.7 7.3,7.7 7.3,10.45"></polyline>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="21.5,7 21.5,3.85 3.5,3.85 3.5,22.577 8.1,22.577"></polyline>	<polygon fill="none" stroke-width="1.0" stroke-miterlimit="10" points="6.825,12.800 12.9,12.800 12.9,10.728 16.613,13.681 16.613,14.365 16.613,15.052 12.9,18.003 12.9,15.900 6.825,15.900"></polygon>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="15.537,13.611 23.324,13.611 23.324,7.598"></polyline>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="11.400,28.700 11.400,19.700 24.500,19.700 24.500,28.700"></polyline></g></svg></button><ul class="dropdown"><li id="crownix-toolbar-storage-mml"><button type="button" title="보고서" class="crownix-toolbar-button">보고서</button></li><li id="crownix-toolbar-storage-formdata" style="display: none;"><button type="button" title="폼 데이터" class="crownix-toolbar-button">폼 데이터</button></li></ul></li><div class="crownix-toolbar-separator" style="display: block;"></div><li id="crownix-toolbar-print" title="인쇄" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable" style="display: none;"><button type="button" title="인쇄" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false">	<g>		<g stroke-width="1.5">			<polyline points="7.5,10.5 7.5,2.5 24.5,2.5 24.5,10.5" fill="none"></polyline>			<polyline points="7.5,23.5 2.5,23.5 2.5,10.5 29.5,10.5 29.5,23.5 24.5,23.5" stroke-linejoin="round" fill="none"></polyline>			<circle cx="26" cy="14" r="0.5"></circle>			<rect x="7.5" y="18.5" fill="none" width="17" height="11"></rect>			<line fill="none" stroke-linecap="round" x1="10.5" y1="22.5" x2="21.5" y2="22.5"></line>			<line fill="none" stroke-linecap="round" x1="10.5" y1="25.5" x2="18.5" y2="25.5"></line>		</g>	</g></svg></button></li><li id="crownix-toolbar-cloud_print" title="구글 클라우드 프린트" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable" style="display: none;"><button type="button" title="구글 클라우드 프린트" class="crownix-toolbar-button"><svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="crownix-toolbar-icon-svg" focusable="false"><g><g id="svg_2" stroke-width="1.5"><rect x="7.5" y="18.5" fill="none" width="17" height="11"></rect><line fill="none" stroke-linecap="round" x1="10.5" y1="23" x2="21.5" y2="23"></line><line fill="none" stroke-linecap="round" x1="10.5" y1="26" x2="18.5" y2="26"></line><line fill="none" stroke-opacity="null" fill-opacity="null" x1="4.713238" y1="18.42647" x2="6.772061" y2="18.5" stroke-linejoin="null" stroke-linecap="null"></line><line fill="none" stroke-opacity="null" fill-opacity="null" x1="25.154411" y1="18.5" x2="27.213234" y2="18.573529" stroke-linejoin="null" stroke-linecap="null"></line><path d="m7.79117,23.17748c-3.46936,0 -6.28318,-3.10131 -6.28318,-6.92514l0,0c0.0021,-3.06899 1.81584,-5.65438 4.32178,-6.56041l0,0c0.08692,-2.60847 2.02842,-4.69063 4.41498,-4.69294l0,0c0.76445,0 1.48178,0.2193 2.10486,0.59672l0,0c1.32575,-2.42957 3.73849,-4.05814 6.50099,-4.05929l0,0c4.13328,0.00231 7.49478,3.64147 7.59007,8.17051l0,0c2.47348,0.92797 4.25371,3.50181 4.2558,6.54541l0,0c0,3.82383 -2.81381,6.92514 -6.28317,6.92514l0,0c-0.15045,-0.13348 -0.00056,-4.77204 -0.15102,-4.7053c-0.15046,0.06674 -4.27204,0.10011 -7.75959,-0.00001c-3.48755,-0.10011 -7.47567,0 -8.86085,0l-0.05089,4.70531l0.20022,0l0,0l0,0l0,0z" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="none"></path></g></g></svg></button></li><li id="crownix-toolbar-print_pdf" title="PDF 파일로 변환하여 인쇄" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-enable" style=""><button type="button" title="PDF 파일로 변환하여 인쇄" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false">	<g>		<g stroke-width="1.5">			<polyline points="7.5,10.5 7.5,2.5 24.5,2.5 24.5,10.5" fill="none"></polyline>			<polyline points="7.5,23.5 2.5,23.5 2.5,10.5 29.5,10.5 29.5,23.5 24.5,23.5" stroke-linejoin="round" fill="none"></polyline>			<circle cx="26" cy="14" r="0.5"></circle>			<rect x="7.5" y="18.5" fill="none" width="17" height="11"></rect>			<line fill="none" stroke-linecap="round" x1="10.5" y1="22.5" x2="21.5" y2="22.5"></line>			<line fill="none" stroke-linecap="round" x1="10.5" y1="25.5" x2="18.5" y2="25.5"></line>			<path stroke-width="0.2" stroke-miterlimit="10" d="m14.1026,8.029c-0.5108,0.44573 -1.4212,1.35355 -0.8036,1.19616c0.9955,-0.56225 1.6175,-2.36574 2.1251,-3.57195c-0.591,-1.23222 -0.021,-2.18845 0.4281,-2.21663c0.5473,-0.03425 0.6898,0.94041 0.6898,0.94041s-0.6064,-0.43074 -0.6991,-0.69333c-0.1044,0.02451 -0.2168,0.82326 0.0927,1.70676c0.3613,-0.42497 0.5424,-0.84956 0.5424,-0.84956s0.4518,0.42457 -0.2266,1.07673c0.1213,0.25232 0.7819,1.26994 1.0812,1.45393c1.8951,-0.47864 1.9854,0.4604 1.9854,0.4604c-0.2926,-0.25105 -0.94,-0.27684 -1.6594,-0.20432c0.9074,0.44805 1.6757,0.29988 1.6757,0.29988c0,0.35081 -1.2292,0.73579 -2.1369,-0.07209c-0.9502,0.14019 -1.9208,0.56979 -2.305,0.67814c-1.0262,1.68508 -2.1485,1.55138 -2.3014,1.14902c-0.2712,-0.67939 1.5116,-1.35355 1.5116,-1.35355l0,0l0,0zm1.7556,-2.06521l-0.6712,1.73893c0.3941,-0.10603 0.8296,-0.30973 1.6103,-0.4537c-0.2528,-0.17331 -0.4812,-0.38789 -0.9391,-1.28523z"></path>		</g>	</g></svg></button></li><div class="crownix-toolbar-separator" style="display: block;"></div><li id="crownix-toolbar-search" title="검색" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-enable" style=""><button type="button" title="검색" class="crownix-toolbar-button"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<path d="M15.016,1.936c-6.637,0-12.037,5.399-12.037,12.037s5.4,12.037,12.037,12.037c6.637,0,12.037-5.399,12.037-12.037		S21.652,1.936,15.016,1.936z M15.016,25.273c-6.231,0-11.301-5.069-11.301-11.301S8.784,2.672,15.016,2.672		s11.301,5.069,11.301,11.301S21.247,25.273,15.016,25.273z"></path>	<g>		<polygon points="22.721,23.019 28.95,29.249 29.968,29.249 29.968,28.405 23.788,21.995 		"></polygon>	</g>	<g>	<path d="M15.225,6.066c-1.114,0-2.203,0.222-3.236,0.661c-0.083,0.034-0.143,0.093-0.174,0.171	c-0.017,0.042-0.039,0.128,0.004,0.225c0.074,0.181,0.253,0.256,0.445,0.178c0.941-0.4,1.941-0.604,2.97-0.604		c3.102,0,5.883,1.841,7.087,4.689c0.052,0.126,0.157,0.196,0.292,0.196c0.018,0,0.029-0.002,0.037-0.005	c0.17-0.075,0.215-0.143,0.238-0.199c0.028-0.072,0.026-0.147-0.007-0.224C21.59,8.063,18.585,6.066,15.225,6.066z"></path>	</g></g></svg></button></li><li id="crownix-toolbar-inquery" title="조회 툴바" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable"><button type="button" title="조회 툴바" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<polygon points="19.505,12.52 25.13,12.52 22.317,15.71"></polygon>	<polygon stroke="none" points="8.124,23.268 2.358,29.279 1.058,29.279 1.058,28.154 7.167,21.804"></polygon>	<path fill="none" stroke-width="1.3" stroke-miterlimit="10" d="M24.913,6.989c0.002,0-3.268-4.242-8.885-4.267	c0,0-6.004-0.219-9.749,5.504c0,0-2.993,4.162-1.012,9.618c0,0,1.113,3.865,5.52,6.383c0,0,3.425,2.047,7.502,1.053 c0,0,4.017-0.736,6.472-3.854"></path>	<rect x="10.598" y="9.756" fill="none" stroke-width="1.3" stroke-miterlimit="10" width="17.344" height="9.047"></rect></g></svg></button></li><div class="crownix-toolbar-separator" style="display: block;"></div><li id="crownix-toolbar-cancel" title="중지" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable"><button type="button" title="중지" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><g>	<g>		<line fill="none" stroke-width="1.4" stroke-miterlimit="10" x1="22.695" y1="16" x2="9.305" y2="16"></line>	</g>	<circle fill="none" stroke-width="1.3" stroke-miterlimit="10" cx="16" cy="16" r="12.700"></circle></g></svg></button></li><li id="crownix-toolbar-share" title="스마트폼 공유하기" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable" style="display: none;"><button type="button" title="스마트폼 공유하기" class="crownix-toolbar-button"><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"> <g class="layer">  <g id="svg_3" class="layer">   <g class="layer" id="svg_2">    <g id="svg_1" class="layer">     <g id="svg_22">      <g id="Ellipse_2">       <g id="svg_23">        <circle cx="9" cy="16" r="5.225" id="svg_24"></circle>       </g>      </g>      <g id="Rectangle_4">       <g id="svg_25">        <rect x="9.538" y="12.638" transform="matrix(0.8663,-0.4994,0.4994,0.8663,-4.6546,8.8819) " fill="#FFFFFF" width="9.46" height="0.999" id="svg_26"></rect>       </g>      </g>      <g id="Rectangle_4_copy">       <g id="svg_27">        <polygon points="10.504,15.005 10.014,15.889 18.496,20.995 18.986,20.111" id="svg_28"></polygon>       </g>      </g>      <g id="Ellipse_2_2_">       <g id="svg_29">        <circle fill="none" cx="23" cy="9" r="5.225" id="svg_30"></circle>       </g>      </g>      <g id="Ellipse_2_4_">       <g id="svg_31">        <circle fill="none" cx="23" cy="23" r="5.225" id="svg_32"></circle>       </g>      </g>     </g>    </g>   </g>  </g> </g></svg></button></li><li id="crownix-toolbar-guide" title="guide" class="crownix-toolbar-item crownix-toolbar-button-zindex crownix-toolbar-item-disable" style="display: none;"><button type="button" title="guide" class="crownix-toolbar-button"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="crownix-toolbar-icon-svg" focusable="false"><path fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-miterlimit="10" d="M3.153,3.719h25.699v22.18h-5.174l-0.484,3.893	c0,0-0.335,0.459-0.726,0.021s-4.687-3.914-4.687-3.914H3.217L3.153,3.719z"></path><line fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-miterlimit="10" x1="6.641" y1="9.734" x2="17.422" y2="9.734"></line><line fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-miterlimit="10" x1="6.641" y1="14.219" x2="25.375" y2="14.219"></line><line fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-miterlimit="10" x1="6.641" y1="18.688" x2="25.375" y2="18.688"></line></svg></button></li></ul></div><span class="crownix-toolbar-mark crownix-toolbar-gradient crownix-toolbar-mark-left" style="left: 0px; top: 0px; display: none;"><span class="crownix-helper"></span><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="100%" viewBox="0 0 15 32" preserveAspectRatio="none" enable-background="new 0 0 15 32" xml:space="preserve" class="crownix-toolbar-icon-svg"><g>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="11.375,25.656 2.625,16.031 11.375,6.344"></polyline></g></svg></span><span class="crownix-toolbar-mark crownix-toolbar-gradient crownix-toolbar-mark-right" style="right: 0px; top: 0px; display: none;"><span class="crownix-helper"></span><svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="100%" viewBox="0 0 15 32" preserveAspectRatio="none" enable-background="new 0 0 15 32" xml:space="preserve" class="crownix-toolbar-icon-svg"><g>	<polyline fill="none" stroke-width="1.2" stroke-miterlimit="10" points="3.625,25.656 12.375,16.031 3.625,6.344"></polyline></g></svg></span></div></div>
+<script type="text/javascript">
+    window.onload = function () {
+    
+        var viewer = new m2soft.crownix.Viewer('/ReportingServer/service', 'crownix-viewer');
+
+        
+        viewer.hideToolbarItem(['doc','xls','ppt','hwp']);
+        
+
+        if ('/epsDwitFC5tpvMNziP3BB5SlKmjuj3+wsTjN8OoyshKlARZs2jK18WmzFlaMO1FMmfWlXmg9Ey/C6G1AcpeocSb2CsXqj/jiWcg2tU63c/paZvcMzAF1CiUoFmXLbd7sDtyYe4CGaJsEO7jWUdUMGfxljvrio7W6CcNQqscQeZ/7Z9LcUXALPbci1n2dPEQ29sM73CaPlHPUePjOOuslOvZjaBF86hVHY6FaxWeDrFnhT8syX8hEllw/T7robaxMJnzj7XO2yx9Uprj3dDU6PKQkOw9fTxHDkRBoDRN9IG/TMGTICw4jkdRdRHFYjo4q/c9D7E01owW2K3M5lsK3oaQ==' == '') {
+            viewer.openFile('K8fYawi7Ukh42YNI+cmiAp/yYDcq3eQPipEQRdoo0A2ajgTVGw+GeIgIXhwWiTBdGTCU51rWkW6yqykK0YKofI2hswHPAdl2KC4qEyQ0HE1jXK3oKvDR2DhoO03xwXf7lSJJg035uGS1YKv6ppLQm4K4y1zJGAy7Mm2cL0j1Z593aELeTkAEFKhjXxaAJzlA4yv7Kpff9DnffjWxd4FRhzDEzqfUMc2p0+YIGTZCUxLrvjEnRgVdXWIRFLdmn2ugtFylH99FiIU2Cj3Y65MqCZtJjNeFw66Kk4hciUEutjRcDKCT4h+EnnWk1P37My07HSYCrTj4BMOiM6x1+L/jIA==')
+        } else {
+            viewer.openFile('K8fYawi7Ukh42YNI+cmiAp/yYDcq3eQPipEQRdoo0A2ajgTVGw+GeIgIXhwWiTBdGTCU51rWkW6yqykK0YKofI2hswHPAdl2KC4qEyQ0HE1jXK3oKvDR2DhoO03xwXf7lSJJg035uGS1YKv6ppLQm4K4y1zJGAy7Mm2cL0j1Z593aELeTkAEFKhjXxaAJzlA4yv7Kpff9DnffjWxd4FRhzDEzqfUMc2p0+YIGTZCUxLrvjEnRgVdXWIRFLdmn2ugtFylH99FiIU2Cj3Y65MqCZtJjNeFw66Kk4hciUEutjRcDKCT4h+EnnWk1P37My07HSYCrTj4BMOiM6x1+L/jIA==', '/epsDwitFC5tpvMNziP3BB5SlKmjuj3+wsTjN8OoyshKlARZs2jK18WmzFlaMO1FMmfWlXmg9Ey/C6G1AcpeocSb2CsXqj/jiWcg2tU63c/paZvcMzAF1CiUoFmXLbd7sDtyYe4CGaJsEO7jWUdUMGfxljvrio7W6CcNQqscQeZ/7Z9LcUXALPbci1n2dPEQ29sM73CaPlHPUePjOOuslOvZjaBF86hVHY6FaxWeDrFnhT8syX8hEllw/T7robaxMJnzj7XO2yx9Uprj3dDU6PKQkOw9fTxHDkRBoDRN9IG/TMGTICw4jkdRdRHFYjo4q/c9D7E01owW2K3M5lsK3oaQ==', { timeout: 18000 })
+        }
+    
+    }
+</script>
+
+
+</body></html>
